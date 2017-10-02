@@ -1,0 +1,16 @@
+*.class
+.idea/
+target/
+.mvn/
+# Package Files #
+*.jar
+*.war
+*.ear
+mvnw.*
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+作者：唯夜
+链接：http://www.jianshu.com/p/a09a9b40ad20
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
