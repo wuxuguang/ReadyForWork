@@ -1,6 +1,7 @@
 package com.problem.algorithms.algrithms.search;
 
 /**
+ * Binary Search Tree(combine linked list and search)
  */
 public class BST<Key extends Comparable<Key>, Value> {
     private Node root;
@@ -28,29 +29,32 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * ���Ҷ�����������Ϊkey�Ľڵ�
+     * Get the value of the key
      *
      * @param key
      * @return
      */
-    public Value get(Key key) {
-        return get(root, key);
+    public Value getRecurisive(Key key) {
+        return getRecurisive(root, key);
+    }
+
+    public Value getNoRecurisive(Key key) {
+        return getNoRecursive(root, key);
     }
 
     /**
-     * �ݹ���ʽ
-     *
+     * 迭代方式获取
      * @param root
      * @param key
      * @return
      */
-    public Value get(Node root, Key key) {
+    public Value getRecurisive(Node root, Key key) {
         if (root == null)
             return null;
         if (root.key.compareTo(key) < 0)
-            return get(root.right, key);
+            return getRecurisive(root.right, key);
         else if (root.key.compareTo(key) > 0)
-            return get(root.left, key);
+            return getRecurisive(root.left, key);
         else
             return root.value;
     }
@@ -62,7 +66,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param key
      * @return
      */
-    public Value getNoRecursive(Node root, Key key) {
+    private Value getNoRecursive(Node root, Key key) {
         Node current = root;
         if (current == null)
             return null;

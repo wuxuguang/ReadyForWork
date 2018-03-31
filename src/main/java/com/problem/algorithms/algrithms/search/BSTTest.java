@@ -1,13 +1,13 @@
 package com.problem.algorithms.algrithms.search;
 
-import java.util.Random;
-
+import org.junit.Before;
+import org.junit.Test;
 
 public class BSTTest {
-    public static void main(String[] args) {
-        Random random = new Random(20);
-        BST<Character, Character> bst = new BST<Character, Character>();
+    private BST<Character, Character> bst = new BST<Character, Character>();
 
+    @Before
+    public void init(){
         String s = "BINARYSEARCHTREE";
 
         for (int i = 0; i < s.length(); i++) {
@@ -15,9 +15,18 @@ public class BSTTest {
             Character value = s.charAt(i);
             bst.put(key, value);
         }
-//        System.out.println(bst.size());
-//        System.out.println(s.length());
-
-        bst.preOrderTransver();
+        System.out.println("init bst over.");
     }
+
+    @Test
+    public void testGetRecurisive(){
+        System.out.println(bst.getRecurisive('B'));
+    }
+
+
+    @Test
+    public void testGetNoRecurisive() {
+        System.out.println(bst.getNoRecurisive('B'));
+    }
+
 }
